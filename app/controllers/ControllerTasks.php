@@ -16,5 +16,10 @@ class ControllerTasks extends Controller {
         $this->view->tasks = $this->model->all();
         $this->view->render('tasks_index_view');
     }
-
+    
+    public function action_save() {
+        $this->view->tasks = $this->model->create();
+        $this->view->render('tasks_create_view');
+    }
+    
 }

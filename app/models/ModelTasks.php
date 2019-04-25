@@ -6,23 +6,33 @@ use core\Model;
 use mysqli;
 
 class ModelTasks extends Model {
-    
+
     /**
      *
      * @var mysqli
      */
-    protected  $db;
-    
+    protected $db;
+
     public function __construct() {
         $this->db = new mysqli(DB_HOST, DB_USER, DB_PWD, DB_NAME);
     }
     
+    public function create() {
+        
+    }
+
+    public function add() {
+        
+    }
+
     public function all() {
         $query = 'SELECT * FROM tasks;';
         $result = $this->db->query($query);
-        if(!$result){
+        if (!$result) {
             return false;
         }
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    
+    
 }
