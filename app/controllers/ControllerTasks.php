@@ -17,4 +17,20 @@ class ControllerTasks extends Controller {
         $this->view->render('tasks_index_view');
     }
 
+    public function action_create() {
+        $this->view->render('tasks_create_view');
+    }
+    
+    public function action_add() {
+        $tasks = filter_input(INPUT_POST, 'tasks');
+        $massege = $this->model->validateTasks($tasks);
+        if($massege === true){
+            $this->model->addTask($tasks);
+            header('Location: '.$_SERVER['HTTP_ORIGIN'].'/tasks');
+        } else {
+            $this->view->error = $massege;
+            $this->view->render('tasks_create_view');
+        }
+    }
+    
 }
