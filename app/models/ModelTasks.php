@@ -17,12 +17,18 @@ class ModelTasks extends Model {
         $this->db = new mysqli(DB_HOST, DB_USER, DB_PWD, DB_NAME);
     }
     
-    public function create() {
-        
+    public function validateTasks($tasks) {
+        if(empty($tasks)){
+            $massages = 'Нет задачи';
+        } else {
+            return true;
+        }
+        return $massages;
     }
 
-    public function add() {
-        
+    public function addTasks($tasks) {
+        $query = "INSERT INTO tasks VALUES (NULL, '".$tasks."')";
+        $this->db->query($query);
     }
 
     public function all() {

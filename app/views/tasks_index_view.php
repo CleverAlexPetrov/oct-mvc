@@ -4,6 +4,4 @@
         <li><?= $task['name'] ?></li>
     <?php endforeach; ?>
 </ul>
-<a href="/tasks/create">+</a><form>
-    <input type="submit" name="submit" value="Добавить"/>
-</form>
+<a href="/tasks/create">+</a>

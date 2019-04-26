@@ -25,7 +25,7 @@ class ControllerTasks extends Controller {
         $tasks = filter_input(INPUT_POST, 'tasks');
         $massege = $this->model->validateTasks($tasks);
         if($massege === true){
-            $this->model->addTask($tasks);
+            $this->model->addTasks($tasks);
             header('Location: '.$_SERVER['HTTP_ORIGIN'].'/tasks');
         } else {
             $this->view->error = $massege;
