@@ -4,8 +4,11 @@ namespace models;
 
 use core\Model;
 
-class ModelApi {
-    public function all() {
-        
+class ModelApi extends Model {
+
+    public function __construct() {
+        parent::__construct();
+        $this->table = 'questions';
     }
+
 }
