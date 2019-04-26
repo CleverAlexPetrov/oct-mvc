@@ -2,8 +2,9 @@
 
 namespace controllers;
 
- use\Controller;
-use core\ModelApi;
+use core\Controller;
+
+use models\ModelApi;
 
 class ControllerApi extends Controller {
 
@@ -17,7 +18,7 @@ class ControllerApi extends Controller {
     }
 
     public function action_questions() {
-        $questions = $this->model->all();//return all questions
+        $questions = $this->model->all(); //return all questions
         $json_text = json_encode($questions);
         header('Content-type: application/json;');
         echo $json_text;

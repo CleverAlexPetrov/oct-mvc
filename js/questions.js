@@ -6,7 +6,7 @@ document.getElementById('courses').onclick = function () {
 	    if (xhr.status === 200) {
 		var json_text = xhr.responseText;
 		var courses = JSON.parse(json_text);
-		for(var i=0; i<courses.length; i++){
+		for (var i = 0; i < courses.length; i++) {
 		    alert(courses[i].ccy);//TODO выводи как хочешь
 		}
 	    }
@@ -15,7 +15,7 @@ document.getElementById('courses').onclick = function () {
     xhr.send();
 };
 
-document.getElementById('questions-btn').onclick = function(){
+document.getElementById('questions-btn').onclick = function () {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/api/questions');
     xhr.onreadystatechange = function () {
@@ -23,13 +23,20 @@ document.getElementById('questions-btn').onclick = function(){
 	    if (xhr.status === 200) {
 		var json_text = xhr.responseText;
 		var questions = JSON.parse(json_text);
-		console.log(questions);
-		//TODO вывести в таблицу
-	    }else{
+		var tbody = document.querySelector('#questions tbody');
+		tbody.innerHTML = '';
+		for (var i = 0; i < questions.length; i++) {
+		    var tr = '<tr>\n\
+<td>' + (i + 1) + '</td>\n\
+<td>' + questions[i].author + '</td>\n\
+<td>' + questions[i].text + '</td>\n\
+</tr>';
+		    tbody.innerHTML += tr;
+		}
+	    } else {
 		return false;
 	    }
 	}
     };
     xhr.send();
 };
-
