@@ -6,6 +6,6 @@
     </head>
     <body>
         <h1>Страница не найдена</h1>
-        <img width="100%" src="https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg" alt="not found"/>
+        <img width="50%" src="https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg" alt="not found"/>
     </body>
 </html>
