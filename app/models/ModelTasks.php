@@ -3,7 +3,6 @@
 namespace models;
 
 use core\Model;
-use mysqli;
 
 class ModelTasks extends Model {
 

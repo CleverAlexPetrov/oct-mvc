@@ -4,4 +4,7 @@
         <li><?= $task['name'] ?></li>
     <?php endforeach; ?>
 </ul>
-<a href="/tasks/create">+</a>
+<div style="height: 20px; width: 22px; background-color: aqua">
+    <a href="/tasks/create">"+"</a>
+</div>
+

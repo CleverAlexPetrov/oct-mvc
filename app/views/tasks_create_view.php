@@ -1,6 +1,3 @@
-<div>
-    <h3>Добавить задачу</h3>
-</div>
 <?php if (!empty($this->error)): ?>
     <div>
         <?= $this->error ?>
@@ -8,5 +5,5 @@
 <?php endif; ?>
 <form method="POST" action="/tasks/add">
     <input type="text" name="tasks"/>
-    <button>Добавить</button>
+    <button>Добавить задачу</button>
 </form>
