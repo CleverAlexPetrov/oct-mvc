@@ -40,5 +40,31 @@ function showQqestions() {
     };
     xhr.send();
 };
+
 showQqestions();
 
+function sendQuestion(author, text){
+    var post_data = 'author=' + author + '&text=' + text;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/api/addquestion');
+    xhr.onreadystatechange = function () {
+	if (xhr.readyState === 4) {
+	    if (xhr.status === 200) {
+		showQqestions();
+	    }
+	}
+    };
+    xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xhr.send(post_data);
+}
+
+document.forms.question.onsubmit = function (event) {
+    var form_elements = this.elements;
+    var author = form_elements.author.value;
+    //form_elements.author.value = '';
+    var text = form_elements.text.value;
+    //form_elements.text.value = '';
+    this.reset(); 
+    sendQuestion(author, text);
+    event.preventDefault();
+};

@@ -11,4 +11,10 @@ class ModelApi extends Model {
         $this->table = "questions";
     }
 
+    public function add($question) {
+        $query = "insert into " . $this->table . " values (null, '{$question['author']}','{$question['text']}');";
+        var_dump($query);
+        $this->db->query($query);
+    }
+
 }
