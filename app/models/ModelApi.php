@@ -16,5 +16,10 @@ class ModelApi extends Model {
         var_dump($query);
         $this->db->query($query);
     }
+    
+    public function delete($id) {
+        $query = "DELETE FROM " . $this->table . " where id=".$id.";";
+        $this->db->query($query);
+    }
 
 }

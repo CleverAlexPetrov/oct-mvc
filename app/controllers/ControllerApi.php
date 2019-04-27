@@ -30,4 +30,9 @@ class ControllerApi extends Controller {
         $this->model->add($question);
     }
 
+    public function action_deletequestion() {
+        $id = filter_input(INPUT_POST, 'id');
+        $this->model->delete($id);
+        
+    }
 }
