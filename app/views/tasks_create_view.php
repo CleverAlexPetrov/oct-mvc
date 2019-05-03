@@ -1,9 +1,8 @@
+<h1>Добавить задачу</h1>
 <?php if (!empty($this->error)): ?>
-    <div>
-        <?= $this->error ?>
-    </div>
+    <?= $this->error ?>
 <?php endif; ?>
 <form method="POST" action="/tasks/add">
-    <input type="text" name="tasks"/>
-    <button>Добавить задачу</button>
+    <input type="text" name="tasks" placeholder="new task" autofocus/>
+    <button>Сохранить</button>
 </form>

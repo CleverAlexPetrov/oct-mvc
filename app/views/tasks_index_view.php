@@ -2,9 +2,18 @@
 <ul>
     <?php foreach ($this->tasks as $task): ?>
         <li><?= $task['name'] ?></li>
+        <form method="POST" action="/tasks/delete">
+            <button>&#10006;
+                <input type="hidden" name="deleteTaskId" value="<?= $task['id'] ?>"/>
+            </button>
+        </form>
+        <form method="POST" action="/tasks/edit">
+            <button>&#9998;
+                <input type="hidden" name="editTaskId" value="<?= $task['id'] ?>"/>
+            </button>
+        </form>
     <?php endforeach; ?>
 </ul>
-<div style="height: 20px; width: 22px; background-color: aqua">
-    <a href="/tasks/create">"+"</a>
-</div>
-
+<button>
+    <a href="/tasks/create" style="text-decoration: none">&#10010;</a>
+</button>
