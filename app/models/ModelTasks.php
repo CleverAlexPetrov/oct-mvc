@@ -34,13 +34,13 @@ class ModelTasks extends Model {
     }
     
     public function idTasks($task) {
-        $query = $task;
-        return $query;
+        var_dump($task);
+        return $task;
     }
     
-    public function editTasks($tasks,$task) {
+    public function editTasks($tasks) {
         $id = $task;
-        $query = "UPDATE tasks SET name = '$tasks' WHERE id = '$id'";
+        $query = "UPDATE tasks SET name = '$tasks' WHERE id = '41'";
         $this->db->query($query);
     }
 

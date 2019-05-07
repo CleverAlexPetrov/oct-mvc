@@ -48,7 +48,7 @@ class ControllerTasks extends Controller {
     public function action_save() {
 
         $tasks = filter_input(INPUT_POST, "edit");
-        $task = 
+        $task = $this->model->idTasks($task);
         var_dump($task);
         $this->model->editTasks($tasks);
         var_dump($tasks);
