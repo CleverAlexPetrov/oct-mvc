@@ -34,7 +34,7 @@ class ModelTasks extends Model {
     }
     
     public function idTasks($task) {
-        var_dump($task);
+    //    var_dump($task);
         return $task;
     }
     
