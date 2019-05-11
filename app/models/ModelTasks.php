@@ -2,9 +2,11 @@
 
 namespace models;
 
-use core\Model;
+namespace models;
 
+use core\Model;
 use core\Controller;
+use mysqli;
 
 class ModelTasks extends Model {
 
@@ -32,15 +34,17 @@ class ModelTasks extends Model {
         $query = "DELETE FROM tasks WHERE id = '$id'";
         $this->db->query($query);
     }
-    
-    public function idTasks($task) {
-        var_dump($task);
-        return $task;
+
+    public function updateTasks($task_id) {
+        $query = "INSERT INTO `tasks` (`id`, `name`) VALUES (NULL, '$task_id');";
+	$result = $this->db->query($query);
+        //TODO запись и вычитание из БД
     }
+
     
+
     public function editTasks($tasks) {
-        $id = $task;
-        $query = "UPDATE tasks SET name = '$tasks' WHERE id = '41'";
+        $query = "UPDATE tasks SET name = '$tasks' WHERE id = '44'";
         $this->db->query($query);
     }
 

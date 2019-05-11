@@ -10,7 +10,8 @@
         <form method="POST" action="/tasks/edit">
             <button>&#9998;
                 <input type="hidden" name="editTaskId" value="<?= $task['id'] ?>"/>
-            </button>
+                <input type="hidden" name="editTaskName" value="<?= $task['name'] ?>"/>
+            </button>           
         </form>
     <?php endforeach; ?>
 </ul>
