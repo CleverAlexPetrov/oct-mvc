@@ -40,19 +40,17 @@ class ControllerTasks extends Controller {
     }
 
     public function action_edit() {
-        $task = filter_input(INPUT_POST, 'editTaskId');
-        $this->model->idTasks($task);
+        $task_id = filter_input(INPUT_POST, 'editTaskId');
+        $this->model->updateTasks($task_id);
         $this->view->render('tasks_edit_view');
     }
 
     public function action_save() {
-
-        $tasks = filter_input(INPUT_POST, "edit");
-        $task = $this->model->idTasks($task);
-        var_dump($task);
+        $tasks = filter_input(INPUT_POST, "new_task");
         $this->model->editTasks($tasks);
-        var_dump($tasks);
-        //header('Location: ' . $_SERVER['HTTP_ORIGIN'] . '/tasks');
+        $task = $this->model->updateTasks($task_id);
+        var_dump($task);
+        header('Location: ' . $_SERVER['HTTP_ORIGIN'] . '/tasks');
     }
 
 }
