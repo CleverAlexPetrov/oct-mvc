@@ -34,18 +34,15 @@ class ModelTasks extends Model {
         $query = "DELETE FROM tasks WHERE id = '$id'";
         $this->db->query($query);
     }
-        return $task;
     public function updateTasks($task_id) {
-        $query = "INSERT INTO `tasks` (`id`, `name`) VALUES (NULL, '$task_id');";
-	$result = $this->db->query($query);
-        //TODO запись и вычитание из БД
-    }
-
-    
+    $sql = "UPDATE `oct_mvc`.`tasks` SET `name` = \'create1\' WHERE `tasks`.`id` = 1;";
+    $result = $this->db->query($query);
+    //TODO запись и вычитание из БД
+}
 
     public function editTasks($tasks) {
-        $query = "UPDATE tasks SET name = '$tasks' WHERE id = '44'";
-        $this->db->query($query);
+    $query = "UPDATE tasks SET name = '$tasks' WHERE id = '44'";
+    $this->db->query($query);
     }
 
 }
